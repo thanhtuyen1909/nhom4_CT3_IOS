@@ -9,7 +9,6 @@ pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'Firebase/Analytics'
 pod 'Firebase/Storage'
-  # Pods for Project
 
   target 'ProjectTests' do
     inherit! :search_paths

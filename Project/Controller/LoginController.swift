@@ -22,7 +22,7 @@ class LoginController: UIViewController {
                 print("Error : \(String(describing: err))")
             }
             else{
-                let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainMenu") as? HomeViewController
+                let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Tabbar") as? HomeTabBarController
                 self.view.window?.rootViewController = homeViewController
                 self.view.window?.makeKeyAndVisible()
             }

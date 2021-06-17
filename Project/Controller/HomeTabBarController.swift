@@ -1,14 +1,14 @@
 //
-//  HomeViewController.swift
+//  HomeTabBarController.swift
 //  Project
 //
-//  Created by danh on 6/6/21.
+//  Created by Chun on 6/16/21.
 //  Copyright © 2021 nhom4. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
