@@ -1,17 +1,20 @@
 //
-//  MenuTableViewCell.swift
+//  ProfileCell.swift
 //  Project
 //
-//  Created by Chun on 6/16/21.
+//  Created by Chun on 6/19/21.
 //  Copyright © 2021 nhom4. All rights reserved.
 //
 
 import UIKit
 
-class MenuTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var imgMenu: UIImageView!
-    @IBOutlet weak var titleMenu: UILabel!
+class ProfileCell: UITableViewCell {
+    
+    // MARK: - properties
+    
+    @IBOutlet weak var profileFuncImg: UIImageView!
+    @IBOutlet weak var profileFuncTitle: UILabel!
+    @IBOutlet weak var profileNextFunc: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

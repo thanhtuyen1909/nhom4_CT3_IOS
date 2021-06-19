@@ -12,9 +12,9 @@ import FirebaseAuth
 class LoginController: UIViewController {
     
     @IBOutlet weak var txtUsername: UITextField!
-    
     @IBOutlet weak var txtPassword: UITextField!
-    
+    @IBOutlet weak var buttonRegister: UIButton!
+    @IBOutlet weak var buttonLogin: UIButton!
     
     @IBAction func btnDangNhap(_ sender: UIButton) {
         Auth.auth().signIn(withEmail: txtUsername.text!, password: txtPassword.text!) { (result, err) in
@@ -33,7 +33,9 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.ref = Database.database().reference()
-        
+        self.view.backgroundColor = UIColor(patternImage: ( #imageLiteral(resourceName: "background") ))
+        buttonLogin.layer.cornerRadius = 25.0
+        buttonRegister.layer.cornerRadius = 25.0
     }
 }
 

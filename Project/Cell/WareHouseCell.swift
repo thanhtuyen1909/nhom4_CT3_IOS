@@ -1,18 +1,20 @@
 //
-//  CoffeeTableViewCell.swift
+//  WareHouseCell.swift
 //  Project
 //
-//  Created by danh on 6/7/21.
+//  Created by Chun on 6/19/21.
 //  Copyright © 2021 nhom4. All rights reserved.
 //
 
 import UIKit
 
-class CoffeeTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var mealImage: UIImageView!
-    @IBOutlet weak var mealName: UILabel!
-    @IBOutlet weak var mealPrice: UILabel!
+class WareHouseCell: UITableViewCell {
+    
+    // MARK: - properties
+    @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var productAmount: UILabel!
+    @IBOutlet weak var productPrice: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

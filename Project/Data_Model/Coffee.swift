@@ -9,15 +9,22 @@
 import UIKit
 class Coffee {
     var coffeeName : String
-    var coffeeImage : UIImage? = nil
+    var coffeeImage : String
     var coffeePrice : Int
-    init(coffeeName:String,coffeeImage:UIImage,coffeePrice:Int) {
+    
+    // MARK: - contructors
+    init() {
+        self.coffeeName = ""
+        self.coffeeImage = ""
+        self.coffeePrice = 0
+    }
+    
+    init?(coffeeName:String, coffeeImage:String, coffeePrice:Int) {
+        if(coffeeName.isEmpty == true || coffeePrice < 0 || coffeeImage.isEmpty == true){
+            return nil
+        }
         self.coffeeName = coffeeName
         self.coffeeImage = coffeeImage
         self.coffeePrice = coffeePrice
-    }
-    init() {
-        self.coffeeName = ""
-        self.coffeePrice = 0
     }
 }

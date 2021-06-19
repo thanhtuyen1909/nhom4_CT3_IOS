@@ -2,12 +2,11 @@
 //  ProjectTests.swift
 //  ProjectTests
 //
-//  Created by danh on 5/29/21.
+//  Created by Chun on 6/19/21.
 //  Copyright © 2021 nhom4. All rights reserved.
 //
 
 import XCTest
-@testable import Project
 
 class ProjectTests: XCTestCase {
 
