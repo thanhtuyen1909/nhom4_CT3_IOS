@@ -11,6 +11,8 @@
 		343C4DD32679F5390004812A /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343C4DD22679F5390004812A /* HomeTabBarController.swift */; };
 		343C4DD8267A2B130004812A /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343C4DD7267A2B130004812A /* MenuController.swift */; };
 		345D8682267899F80063060E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 345D8681267899F80063060E /* GoogleService-Info.plist */; };
+		3471CCFB26801E4100E05416 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471CCFA26801E4100E05416 /* RegisterController.swift */; };
+		3471CCFD268029B900E05416 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471CCFC268029B900E05416 /* Utilities.swift */; };
 		349D159D267ADA560078F907 /* ListCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D159C267ADA560078F907 /* ListCartController.swift */; };
 		349D159F267ADACE0078F907 /* WareHouseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D159E267ADACE0078F907 /* WareHouseController.swift */; };
 		349D15A1267ADB000078F907 /* InvoicesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D15A0267ADB000078F907 /* InvoicesController.swift */; };
@@ -21,6 +23,7 @@
 		34AA7D1A267E0C420019908A /* WareHouseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AA7D19267E0C420019908A /* WareHouseCell.swift */; };
 		34AA7D1C267E0D840019908A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AA7D1B267E0D840019908A /* Product.swift */; };
 		34AA7D20267E87AB0019908A /* CoffeeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AA7D1F267E87AB0019908A /* CoffeeDetailController.swift */; };
+		B431E973267F3F5000CB3304 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B431E972267F3F5000CB3304 /* CartTableViewCell.swift */; };
 		B439908A266E6FE700D31544 /* Coffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4399089266E6FE700D31544 /* Coffee.swift */; };
 		B43DFEC5266E671C00155273 /* CoffeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43DFEC4266E671C00155273 /* CoffeeTableViewCell.swift */; };
 		B4AC70C126628A0600F04EA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC70C026628A0600F04EA2 /* AppDelegate.swift */; };
@@ -46,6 +49,8 @@
 		343C4DD22679F5390004812A /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		343C4DD7267A2B130004812A /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		345D8681267899F80063060E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3471CCFA26801E4100E05416 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		3471CCFC268029B900E05416 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		349D159C267ADA560078F907 /* ListCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCartController.swift; sourceTree = "<group>"; };
 		349D159E267ADACE0078F907 /* WareHouseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WareHouseController.swift; sourceTree = "<group>"; };
 		349D15A0267ADB000078F907 /* InvoicesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicesController.swift; sourceTree = "<group>"; };
@@ -60,6 +65,7 @@
 		34AA7D1F267E87AB0019908A /* CoffeeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailController.swift; sourceTree = "<group>"; };
 		459275920415B8264684BE0D /* Pods_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C4B6C6ED123BB1A85E5C86 /* Pods-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.debug.xcconfig"; path = "Target Support Files/Pods-Project/Pods-Project.debug.xcconfig"; sourceTree = "<group>"; };
+		B431E972267F3F5000CB3304 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		B4399089266E6FE700D31544 /* Coffee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffee.swift; sourceTree = "<group>"; };
 		B43DFEC4266E671C00155273 /* CoffeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeTableViewCell.swift; sourceTree = "<group>"; };
 		B4AC70BD26628A0600F04EA2 /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,8 +125,17 @@
 				34AA7D04267DE7B80019908A /* ListProfileController.swift */,
 				34AA7D08267DFF570019908A /* ResetPassController.swift */,
 				34AA7D1F267E87AB0019908A /* CoffeeDetailController.swift */,
+				3471CCFA26801E4100E05416 /* RegisterController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		3471CCFE268029CB00E05416 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3471CCFC268029B900E05416 /* Utilities.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		34AA7D0A267E090E0019908A /* Cell */ = {
@@ -129,6 +144,7 @@
 				34AA7D06267DE8F60019908A /* ProfileCell.swift */,
 				B43DFEC4266E671C00155273 /* CoffeeTableViewCell.swift */,
 				34AA7D19267E0C420019908A /* WareHouseCell.swift */,
+				B431E972267F3F5000CB3304 /* CartTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -184,6 +200,7 @@
 		B4AC70BF26628A0600F04EA2 /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				3471CCFE268029CB00E05416 /* Helpers */,
 				34AA7D0A267E090E0019908A /* Cell */,
 				343C4DD4267A1B910004812A /* Controller */,
 				B4399088266E6FCA00D31544 /* Data_Model */,
@@ -370,9 +387,12 @@
 				349D159F267ADACE0078F907 /* WareHouseController.swift in Sources */,
 				34AA7D20267E87AB0019908A /* CoffeeDetailController.swift in Sources */,
 				34AA7D09267DFF570019908A /* ResetPassController.swift in Sources */,
+				3471CCFB26801E4100E05416 /* RegisterController.swift in Sources */,
+				B431E973267F3F5000CB3304 /* CartTableViewCell.swift in Sources */,
 				B43DFEC5266E671C00155273 /* CoffeeTableViewCell.swift in Sources */,
 				B4AC70C126628A0600F04EA2 /* AppDelegate.swift in Sources */,
 				349D159D267ADA560078F907 /* ListCartController.swift in Sources */,
+				3471CCFD268029B900E05416 /* Utilities.swift in Sources */,
 				343C4DD8267A2B130004812A /* MenuController.swift in Sources */,
 				34AA7D05267DE7B80019908A /* ListProfileController.swift in Sources */,
 				34AA7D1A267E0C420019908A /* WareHouseCell.swift in Sources */,

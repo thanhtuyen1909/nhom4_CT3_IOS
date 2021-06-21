@@ -62,6 +62,7 @@ class CoffeeDetailController: UIViewController, UITextFieldDelegate, UIImagePick
         // Upload data and metadata
         photoRef.putData(data, metadata: metadata)
     }
+    
     // Moi lan tap len img an ban phim
     @IBAction func imageProcessing(_ sender: UITapGestureRecognizer) {
         coffeeName.resignFirstResponder()
@@ -88,7 +89,7 @@ class CoffeeDetailController: UIViewController, UITextFieldDelegate, UIImagePick
         uploadFile(filename: "\(name).jpg", data: (self.coffeeImage.image?.jpegData(compressionQuality: 0.75))!)
         
         // Upload product
-        let ref = Database.database().reference().child("Products")
+        let ref = Database.database().reference()
         
         if (!checkAddCoffee) {
             var idCoffee: String?
@@ -98,13 +99,13 @@ class CoffeeDetailController: UIViewController, UITextFieldDelegate, UIImagePick
                         let coffeeData = cof.value as? NSDictionary
                         if let cofName = coffeeData!["name"] as? String, cofName == name {
                             idCoffee = cof.key;
-                            ref.child(idCoffee!).setValue(["name": name, "price": price!, "img": img]);
+                            ref.child("Products").child(idCoffee!).setValue(["name": name, "price": price!, "img": img]);
                         }
                     }
                 }
             })
         } else {
-            ref.childByAutoId().setValue(["name": name, "price": price!, "img": img]);
+            ref.child("Products").childByAutoId().setValue(["name": name, "price": price!, "img": img]);
         }
     }
 }

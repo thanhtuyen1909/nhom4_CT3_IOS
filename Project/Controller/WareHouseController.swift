@@ -18,6 +18,15 @@ class WareHouseController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var productTable: UITableView!
     @IBOutlet weak var seachProduct: UISearchBar!
     
+    func formatPrice(priceFrom:Int)->String{
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.groupingSeparator = ","
+        currencyFormatter.groupingSize = 3
+        currencyFormatter.usesGroupingSeparator = true
+        
+        return currencyFormatter.string(from: priceFrom as NSNumber)!;
+    }
+    
     // MARK: - functions
     // Chuan bi so dong
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,7 +82,7 @@ class WareHouseController: UIViewController, UITableViewDataSource, UITableViewD
         if let cell:WareHouseCell = tableView.dequeueReusableCell(withIdentifier: "WareCell") as? WareHouseCell {
             cell.productName.text = self.productLists[indexPath.row].productName
             cell.productAmount.text = "\(self.productLists[indexPath.row].productAmount)"
-            cell.productPrice.text = "\(self.productLists[indexPath.row].productPrice) VND"
+            cell.productPrice.text = "\(formatPrice(priceFrom: self.productLists[indexPath.row].productPrice)) VND"
             return cell
         } else {
             fatalError("Cannot create cell!");
@@ -210,8 +219,8 @@ class WareHouseController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func addProduct(name: String, amount: Int, price: Int) {
-        let ref = Database.database().reference().child("Ingredients")
-        ref.childByAutoId().setValue(["name": name, "price": price, "quantity": amount]);
+        let ref = Database.database().reference()
+        ref.child("Ingredients").childByAutoId().setValue(["name": name, "price": price, "quantity": amount]);
         self.productTable.reloadData()
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseStorage
-
+import FirebaseAuth
 class MenuController: UIViewController, UITableViewDataSource , UITableViewDelegate, UISearchBarDelegate {
     //create datasource
     var coffeeList = [Coffee] ()
@@ -29,6 +29,15 @@ class MenuController: UIViewController, UITableViewDataSource , UITableViewDeleg
         if let coffeeDetail:CoffeeDetailController = self.storyboard?.instantiateViewController(withIdentifier: "coffeeDetail") as? CoffeeDetailController {
             self.navigationController?.pushViewController(coffeeDetail, animated: true)
         }
+    }
+    
+    func formatPrice(priceFrom:Int)->String{
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.groupingSeparator = ","
+        currencyFormatter.groupingSize = 3
+        currencyFormatter.usesGroupingSeparator = true
+        
+        return currencyFormatter.string(from: priceFrom as NSNumber)!;
     }
     
     // Tim kiem coffee
@@ -116,6 +125,44 @@ class MenuController: UIViewController, UITableViewDataSource , UITableViewDeleg
         getData()
     }
     
+    //add Cart
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let ref = Database.database().reference()
+        var check = false
+        var dict:[String:Any]
+        dict = ["name":"","image":"","price":0,"quantity":0,"uid":""];
+        let tempCoffee = self.coffeeList[indexPath.row]
+        dict["name"] = tempCoffee.coffeeName
+        dict["image"] = tempCoffee.coffeeImage
+        dict["price"] = tempCoffee.coffeePrice
+        dict["uid"] = Auth.auth().currentUser!.uid
+        
+            ref.child("Carts").getData(completion: { (err, snapshot) in
+                if(!snapshot.exists()) {
+                    ref.child("Carts").childByAutoId().setValue(["name":"a","image":"a","price":0,"quantity":0,"uid":"a"])
+                }
+                if snapshot.childrenCount >= 0{
+                    var i = 0
+                    for cart in snapshot.children.allObjects as! [DataSnapshot]{
+                        let cartData = cart.value as? NSDictionary
+                        let coffeeName = cartData!["name"] as? String ?? ""
+                        if coffeeName == tempCoffee.coffeeName {
+                            var quantity = cartData!["quantity"] as? Int ?? 0
+                            quantity += 1
+                            dict["quantity"] = quantity
+                            check = true
+                            ref.child("Carts").child(cart.key).setValue(dict)
+                        }
+                        if i == snapshot.childrenCount - 1, check == false{
+                            dict["quantity"] = 1
+                            ref.child("Carts").childByAutoId().setValue(dict)
+                        }
+                        i += 1
+                    }
+                }
+            })
+    }
+    
     // Lay du lieu tu Firebase
     func getData () {
         let ref = Database.database().reference().child("Products")
@@ -131,7 +178,6 @@ class MenuController: UIViewController, UITableViewDataSource , UITableViewDeleg
                     self.coffee = Coffee(coffeeName: coffeeName, coffeeImage: imageName, coffeePrice: coffeePrice)!
                     self.coffeeList.append(self.coffee);
                 }
-                
                 self.tableMeal.reloadData()
             }
         })
@@ -163,7 +209,7 @@ class MenuController: UIViewController, UITableViewDataSource , UITableViewDeleg
                 }
             }
             cell.mealName.text = coffeePr.coffeeName
-            cell.mealPrice.text = "\(coffeePr.coffeePrice) VND"
+            cell.mealPrice.text = "\(formatPrice(priceFrom: coffeePr.coffeePrice)) VND"
             return cell;
         }
         else {
